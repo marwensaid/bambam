@@ -69,10 +69,9 @@ def load_sound(name):
     return sound
 
 
-# Runs load_function on elements of lst unless they are blacklisted.
 def load_items(lst, blacklist, load_function):
+    """Runs load_function on elements of lst unless they are blacklisted."""
     result = []
-    global args
     for name in lst:
         if True in [fnmatch.fnmatch(name, p) for p in blacklist]:
             print "Skipping blacklisted item:", name
